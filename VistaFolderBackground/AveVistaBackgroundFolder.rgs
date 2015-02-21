@@ -1,0 +1,26 @@
+HKCR
+{
+	VistaFolderBackground.AveVistaBackgro.1 = s 'AveVistaBackgroundFolder Class'
+	{
+		CLSID = s '{73526E5A-FD53-4BE7-B5E2-D3C89D7413DC}'
+	}
+	VistaFolderBackground.AveVistaBackgroun = s 'AveVistaBackgroundFolder Class'
+	{
+		CLSID = s '{73526E5A-FD53-4BE7-B5E2-D3C89D7413DC}'
+		CurVer = s 'VistaFolderBackground.AveVistaBackgro.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {73526E5A-FD53-4BE7-B5E2-D3C89D7413DC} = s 'AveVistaBackgroundFolder Class'
+		{
+			ProgID = s 'VistaFolderBackground.AveVistaBackgro.1'
+			VersionIndependentProgID = s 'VistaFolderBackground.AveVistaBackgroun'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{08F1E432-51C8-4911-B779-53FF2B8D324F}'
+		}
+	}
+}

@@ -1,0 +1,51 @@
+// VistaFolderBackground.idl : IDL source for VistaFolderBackground
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (VistaFolderBackground.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(243F31ED-7429-4CBC-A0F7-26223D9762DE),
+	helpstring("IAveVistaBackgroundFolder Interface"),
+	pointer_default(unique)
+]
+interface IAveVistaBackgroundFolder : IUnknown{
+	[helpstring("method InitMe")] HRESULT InitMe(void);
+};
+[
+	object,
+	uuid(E497DEED-DEA4-4388-816C-7F1ADB334B94),
+	helpstring("IShellExtConfigEntry Interface"),
+	pointer_default(unique)
+]
+interface IShellExtConfigEntry : IUnknown{
+};
+[
+	uuid(08F1E432-51C8-4911-B779-53FF2B8D324F),
+	version(1.0),
+	helpstring("VistaFolderBackground 1.0 Type Library")
+]
+library VistaFolderBackgroundLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(73526E5A-FD53-4BE7-B5E2-D3C89D7413DC),
+		helpstring("AveVistaBackgroundFolder Class")
+	]
+	coclass AveVistaBackgroundFolder
+	{
+		[default] interface IAveVistaBackgroundFolder;
+	};
+	[
+		uuid(B1E4711E-9386-4927-9291-6FFC49631520),
+		helpstring("ShellExtConfigEntry Class")
+	]
+	coclass ShellExtConfigEntry
+	{
+		[default] interface IShellExtConfigEntry;
+	};
+};

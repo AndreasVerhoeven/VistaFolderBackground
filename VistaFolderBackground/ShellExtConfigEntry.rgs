@@ -1,0 +1,40 @@
+HKCR
+{
+	VistaFolderBackground.ShellExtConfigE.1 = s 'ShellExtConfigEntry Class'
+	{
+		CLSID = s '{B1E4711E-9386-4927-9291-6FFC49631520}'
+	}
+	VistaFolderBackground.ShellExtConfigEnt = s 'ShellExtConfigEntry Class'
+	{
+		CLSID = s '{B1E4711E-9386-4927-9291-6FFC49631520}'
+		CurVer = s 'VistaFolderBackground.ShellExtConfigE.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B1E4711E-9386-4927-9291-6FFC49631520} = s 'ShellExtConfigEntry Class'
+		{
+			ProgID = s 'VistaFolderBackground.ShellExtConfigE.1'
+			VersionIndependentProgID = s 'VistaFolderBackground.ShellExtConfigEnt'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{08F1E432-51C8-4911-B779-53FF2B8D324F}'
+		}
+	}
+	
+	NoRemove Folder
+	{
+		NoRemove shellex
+		{
+			NoRemove PropertySheetHandlers
+			{
+				ForceRemove AveFolderBg = s '{B1E4711E-9386-4927-9291-6FFC49631520}'
+				{
+					CLSID = s '{B1E4711E-9386-4927-9291-6FFC49631520}'
+				}
+			}
+		}
+	}
+}
